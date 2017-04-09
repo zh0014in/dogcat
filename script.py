@@ -9,8 +9,14 @@ test = pd.read_csv('test.csv',sep=",")
 # full = np.vstack([train, test])
 
 data_train = np.array(train)
+
 outcometype_count = Counter(data_train[:, 3])
 outcomesubtype_count = Counter(data_train[:, 4])
+
+df = pd.DataFrame(outcomesubtype_count)
+plt.figure();
+df.ix[5].plot.bar();
+plt.axhline(0, color='k')
 
 def plot_bar_from_counter(counter, ax=None):
     """"
