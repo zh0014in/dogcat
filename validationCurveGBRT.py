@@ -1,9 +1,10 @@
-from sklearn.model_selection import learning_curve
+import numpy as np
+from sklearn.model_selection import validation_curve
+from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
 import numpy as np
 import pandas as pd
-
-#RANDOM_STATE = 731
 
 train = pd.read_csv('train_out.csv',sep=",")
 data_train = np.array(train)
@@ -15,16 +16,8 @@ data_test = np.array(test)
 X_test = data_test[:, 8:]
 i_test = data_test[:, 0]
 
-estimator = 900
-
-clf = RandomForestClassifier(max_features=None, oob_score=True, max_depth=5)#, random_state=RANDOM_STATE)
-
-train_sizes, train_scores, valid_scores = learning_curve(
-    clf, X, y, train_sizes=[5000, 10000, 15000, 20000], cv=5)
-print train_sizes
-
+clf = RandomForestClassifier( max_features=None) 
+train_scores, valid_scores = validation_curve(clf, X, y, "max_depth", [3,4,5])
 print train_scores
-
-
 
 print valid_scores
