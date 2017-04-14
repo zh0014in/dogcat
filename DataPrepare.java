@@ -14,8 +14,18 @@ public class DataPrepare {
     String outCsvFile = "train_out.csv";
     BufferedReader br = null;
     String line = "";
-    String cvsSplitBy = ",";
+    String csvSplitBy = ",";
     PrintWriter pw = null;
+    int indexShift = 0;
+    public DataPrepare(){
+
+    }
+
+    public DataPrepare(String inputFile, String outputFile, int indexShift){
+        this.csvFile = inputFile;
+        this.outCsvFile = outputFile;
+        this.indexShift = indexShift;
+    }
 
     private void ReadFile() {
         try {
@@ -26,7 +36,7 @@ public class DataPrepare {
             pw.write(line + ",age,hours,week,month,sex1,sex2,isMix,simpleColor,hasName,type"
                     + System.getProperty("line.separator"));
             while ((line = br.readLine()) != null) {
-                String[] columns = line.split(cvsSplitBy);
+                String[] columns = line.split(csvSplitBy);
                 int age = ParseAgeuponOutcome(columns);
                 int hours = ParseDateTimeHourofDay(columns);
                 int week = ParseDatetimeWeek(columns);
@@ -37,7 +47,7 @@ public class DataPrepare {
                 int color = ParseColor(columns);
                 int hasName = ParseName(columns);
                 int type = ParseType(columns);
-                pw.write(String.join(cvsSplitBy, columns) + "," + age + "," + hours + "," + week + "," + month + ","
+                pw.write(String.join(csvSplitBy, columns) + "," + age + "," + hours + "," + week + "," + month + ","
                         + sex1 + "," + sex2 + "," + mix + "," + color + "," + hasName + "," + type
                         + System.getProperty("line.separator"));
             }
@@ -64,7 +74,7 @@ public class DataPrepare {
     }
 
     private int ParseAgeuponOutcome(String[] columns) {
-        String ageuponOutcome = columns[7];
+        String ageuponOutcome = columns[7+indexShift];
         if (ageuponOutcome == null || ageuponOutcome.isEmpty()) {
             // give default 0 years to empty rows
             ageuponOutcome = "0 years";
@@ -81,11 +91,11 @@ public class DataPrepare {
         if (unit.startsWith("day")) {
 
         } else if (unit.startsWith("week")) {
-            age = (int) (age * 7 * multiplier);
+            age = (int) (age * multiplier);
         } else if (unit.startsWith("month")) {
-            age = (int) (age * 30 * multiplier);
+            age = (int) (age * 4 * multiplier);
         } else if (unit.startsWith("year")) {
-            age = (int) (age * 365 * multiplier);
+            age = (int) (age * 52 * multiplier);
         }
         return age;
     }
@@ -139,7 +149,7 @@ public class DataPrepare {
     }
 
     private int ParseSexuponOutcome(String[] columns) {
-        String sex = columns[6];
+        String sex = columns[6+indexShift];
         if (sex.toLowerCase().equals("unknown")) {
             return -1;
         }
@@ -151,7 +161,7 @@ public class DataPrepare {
     }
 
     private int ParseSexuponOutcome2(String[] columns) {
-        String sex = columns[6];
+        String sex = columns[6+indexShift];
         if (sex.toLowerCase().equals("unknown")
         || sex == null || sex.isEmpty()) {
             return -1;
@@ -164,7 +174,7 @@ public class DataPrepare {
     }
 
     private int ParseIsMix(String[] columns) {
-        String breed = columns[8];
+        String breed = columns[8+indexShift];
         if (breed.toLowerCase().contains("mix")) {
             return 1;
         }
@@ -172,7 +182,7 @@ public class DataPrepare {
     }
 
     private int ParseColor(String[] columns) {
-        String color = columns[9];
+        String color = columns[9+indexShift];
         if (color.contains("/") || color.contains(" ")) {
             return 1;
         }
@@ -188,7 +198,7 @@ public class DataPrepare {
     }
 
     private int ParseType(String[] columns){
-        String type = columns[5];
+        String type = columns[5+indexShift];
         if(type.equals("Dog")){
             return 1;
         }
@@ -201,6 +211,8 @@ public class DataPrepare {
 
     public static void main(String[] args) {
         DataPrepare dp = new DataPrepare();
+        dp.Run();
+        dp = new DataPrepare("test.csv", "test_out.csv", -2);
         dp.Run();
     }
 }
