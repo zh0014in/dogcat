@@ -91,11 +91,11 @@ public class DataPrepare {
         if (unit.startsWith("day")) {
 
         } else if (unit.startsWith("week")) {
-            age = (int) (age * multiplier);
+            age = (int) (age * multiplier / 4);
         } else if (unit.startsWith("month")) {
-            age = (int) (age * 4 * multiplier);
+            age = (int) (age * multiplier);
         } else if (unit.startsWith("year")) {
-            age = (int) (age * 52 * multiplier);
+            age = (int) (age * 12 * multiplier);
         }
         return age;
     }
@@ -109,7 +109,16 @@ public class DataPrepare {
             Calendar cal = Calendar.getInstance();
             cal.setTime(date);
             int hours = cal.get(Calendar.HOUR_OF_DAY);
-            return hours;
+            if(hours > 5 && hours < 11){
+                return 1;
+            }
+            if(hours > 10 && hours < 16){
+                return 2;
+            }
+            if(hours > 15 && hours < 20){
+                return 3;
+            }
+            return 4;
         } catch (ParseException ex) {
             System.out.println("Exception " + ex);
         }

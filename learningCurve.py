@@ -19,7 +19,7 @@ k = 'rbf'
 clf = SVC(C=c, gamma=g, kernel=k,probability = True, cache_size=4000)
 
 train_sizes, train_scores, valid_scores = learning_curve(
-    clf, X, y, train_sizes=[5000, 10000, 15000, 20000], cv=5, n_jobs=5)
+    clf, X, y, train_sizes=[2000, 4000, 6000, 8000, 10000], cv=5, n_jobs=5)
 print train_sizes
 
 print train_scores
