@@ -42,17 +42,6 @@ for label, clf in ensemble_clfs:
         oob_error = 1 - clf.oob_score_
         error_rate[label].append((i, oob_error))
 
-# Generate the "OOB error rate" vs. "n_estimators" plot.
-# for label, clf_err in error_rate.items():
-#     xs, ys = zip(*clf_err)
-#     plt.plot(xs, ys, label=label)
-#
-# plt.xlim(min_estimators, max_estimators)
-# plt.xlabel("n_estimators")
-# plt.ylabel("OOB error rate")
-# plt.legend(loc="upper right")
-# plt.show()
-
 y_test = clf.predict_proba(X_test)
 result = np.column_stack([i_test, y_test])
 thefile = open('result.csv', 'w')

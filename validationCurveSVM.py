@@ -7,8 +7,8 @@ import pandas as pd
 
 train = pd.read_csv('train_out.csv',sep=",")
 data_train = np.array(train)
-X = data_train[:10000, 10:]
-y = data_train[:10000, 3]
+X = data_train[:, 10:]
+y = data_train[:, 3]
 
 test = pd.read_csv('test_out.csv', sep=",")
 data_test = np.array(test)

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a00e816-5a75-4c85-867a-cff59f564284" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataPrepare.class" afterPath="$PROJECT_DIR$/DataPrepare.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataPrepare.java" afterPath="$PROJECT_DIR$/DataPrepare.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/learningCurve.py" afterPath="$PROJECT_DIR$/learningCurve.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_out.csv" afterPath="$PROJECT_DIR$/test_out.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train_out.csv" afterPath="$PROJECT_DIR$/train_out.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/validationCurve.py" afterPath="$PROJECT_DIR$/validationCurve.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="learningCurve.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="learningCurve.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/learningCurve.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="57" lean-forward="false" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
+            <state relative-caret-position="435">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -114,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="validationCurve.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="validationCurve.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/validationCurve.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            <state relative-caret-position="375">
+              <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -160,8 +155,8 @@
         <option value="$PROJECT_DIR$/tune_random_forest.py" />
         <option value="$PROJECT_DIR$/randomForest.py" />
         <option value="$PROJECT_DIR$/errors.py" />
-        <option value="$PROJECT_DIR$/validationCurve.py" />
         <option value="$PROJECT_DIR$/learningCurve.py" />
+        <option value="$PROJECT_DIR$/validationCurve.py" />
       </list>
     </option>
   </component>
@@ -592,22 +587,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/validationCurve.py">
+    <entry file="file://$PROJECT_DIR$/learningCurve.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="435">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learningCurve.py">
+    <entry file="file://$PROJECT_DIR$/validationCurve.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="57" lean-forward="false" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
+        <state relative-caret-position="375">
+          <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
